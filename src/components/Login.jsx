@@ -8,7 +8,7 @@ const Login =() =>{
 
     const  SITE_KEY ="6LfVuDArAAAAADsEVke1LOhS4h0EWj9tIsnxvQbX"
     const navigate = useNavigate ();
-    const uniqId = useId();
+    
     const [formData, setFormData]= useState({
         email:'',
         password:'',
@@ -22,6 +22,7 @@ const Login =() =>{
         })
     }
     const handleRecaptchachange =(value) =>{
+        e.preventDefault();
         console.log(value)
         //const isVerified = value? true: false;
         const isVerified =!!value;
@@ -37,7 +38,7 @@ const Login =() =>{
         if(formData.reCaptchaVerified) return;
 
         
-        alert('Login successful')
+        navigate('/dashboard')
     }
     return(
         <div className='flex justify-center'>
@@ -70,5 +71,5 @@ const Login =() =>{
     )
 }
 
-export default Login
+export default Login;
 
